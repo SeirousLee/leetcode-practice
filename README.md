@@ -1,3 +1,3 @@
 # leetcode-practice
 Python3 leetcode
-practice
+practice in python3
