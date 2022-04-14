@@ -22,4 +22,20 @@ from typing import List
 
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        pass
+        right = len(height) - 1
+        left = 0
+        max = 0
+        while left < right:
+            area = min(height[left], height[right]) * (right - left)
+            if area > max:
+                max = area
+            if height[left] <= height[right]:
+                left += 1
+            else:
+                right -= 1
+        return max
+
+
+if __name__ == '__main__':
+    s = Solution()
+    print(s.maxArea([1,3,2,5,25,24,5]))
